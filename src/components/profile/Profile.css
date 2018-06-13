@@ -1,0 +1,162 @@
+/******************************** Profile containers ********************************/
+/* Styles of profile data box */
+.center {
+    background: #fff;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* Avoid auto margins and paddings */
+.center, .center .row, .profileData, .image {
+    margin: 0;
+    padding: 0;
+}
+
+/******************************** Profile data ********************************/
+/* Media query for mobile devices */
+@media only screen and (max-width: 425px) {
+    /* Width of the profile image */
+    .profile .image img {
+        width: 50%;
+    }
+
+    /* Bottom shadow of the profile image */
+    .image:after {
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 100%);
+    }
+
+    /* Inner space for info container */
+    .info {
+        padding: 1em 0.5em;
+    }
+
+    /* Direction of the items of the stadistics */
+    .stats {
+        flex-direction: row;
+    }
+
+    /* Inner space and shadow of the stadistics boxes */
+    .stats .box {
+        padding: 0.5em;
+        box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Media query for tablet devices or computers */
+@media only screen and (min-width: 426px) {
+    /* Width of the profile image */
+    .profile .image img {
+        width: 100%;
+    }
+
+    /* Right shadow of the profile image */
+    .image:after {
+       background: linear-gradient(to right, rgba(255,255,255,0) 0%, #fff 100%);
+    }
+
+    /* Inner space for info container */
+    .info {
+        padding: 0 1em;
+    }
+    /* Direction of the items of the stadistics */
+    .stats {
+        flex-direction: column;
+    }
+
+    /* Shadow of the stadistics boxes */
+    .stats .box {
+        box-shadow: -1px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/*
+ * Profile image
+ */
+/* Blur of the profile picture */
+.image:after {
+  content:'';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+/*
+ * Main profile data
+ */
+/* Display of the Edit button on info hover */
+.profile:hover #editBtn {
+    display: block;
+    cursor: pointer;
+}
+
+/* Position and size of the Edit button */
+.profile #editBtn {
+    display: none;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    width: 2em;
+}
+
+/* Weight of the profile name and stats values */
+.profile .name, .stats .value {
+    font-weight: bolder;
+}
+
+/*
+ * Profile form
+ */
+/* Display of the form elements */
+.profileForm {
+    flex-direction: column;
+}
+
+/* Size and margin of the form elements */
+.profileForm > :nth-child(n) {
+    width: 100%;
+    margin-bottom: 1%;
+}
+
+/* Display of the form elements */
+.profileForm .formButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Size of the form buttons */
+.formButtons button {
+    width: 6em;
+}
+
+/*
+ * Profile stadistics
+ */
+/* Inner space for profile stadistics */
+.stats {
+    padding: 0;
+}
+
+/* Properties for profile stadistics elements */
+.stats .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    flex: 1;
+}
+
+/* Transition for properties of the profile stadistics elements */
+.stats .box:hover {
+    background-color: #ff90bb;
+    color: white;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
